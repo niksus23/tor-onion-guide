@@ -7,7 +7,7 @@
 - [🔧 Установка Tor Expert Bundle](#-установка-tor-expert-bundle-и-настройка)
 - [🌐 Гайд чтобы Tor работал без мостов](https://github.com/niksus23/WARP-AmneziaWG-Guide)
 - [🚨 Важно](#-Важно-ключи-сервиса)
-- [🔧Приватный onion-ресурс через Client Authorization](#-Ваш-onion-ресурс-можно-сделать-приватным-через-Client-Authorization)
+- [🔧Приватный onion-ресурс через Client Authorization](#-Ваш-onion-ресурс-можно-сделать-приватным-через-`Client-Authorization`)
 - [🧅 Примеры как работает Tor](#-Как-это-работает-пример-с-File-Browser)
 - [⚙️ Параметры конфига](#-все-параметры-конфига-с-пояснениями)
 - [⚠️ Дисклеймер](#-Дисклеймер)
