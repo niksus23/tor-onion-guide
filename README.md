@@ -197,7 +197,7 @@ descriptor:x25519:СОДЕРЖИМОЕ_k.pub
 
 ## 🧅 Как это работает: пример с File Browser
 
-https://github.com/filebrowser/filebrowser
+Ссылка: https://github.com/filebrowser/filebrowser
 
 - File Browser запускается на компьютере (например, на Windows) и начинает слушать локальный порт, скажем, 8080. Это значит, что если открыть в браузере http://127.0.0.1:8080, появится интерфейс File Browser.
 
@@ -294,7 +294,7 @@ File Browser работает локально на порту 8080. Tor соз�
 <summary>⚙️ Конфиг</summary>
 <pre>
 #Директория Tor
-DataDirectory C:\torchek\data\Tor            # Хранилище состояния, ключей, кэша. При полном сбросе — удалить
+DataDirectory ...                            # Хранилище состояния, ключей, кэша. При полном сбросе — удалить
 
 #настройка Tor
 SocksPort 9050                               # SOCKS-прокси для клиентских приложений
@@ -309,8 +309,8 @@ CookieAuthentication 1                       # Аутентификация на
 ORPort 0                                     # Не принимать входящие соединения от других узлов
 ExitRelay 0                                  # Запрет быть выходным релеем
 EnforceDistinctSubnets 1                     # Узлы одной цепи из разных подсетей /16
-GeoIPFile C:\torchek\data\geoip              # База геолокации IPv4
-GeoIPv6File C:\torchek\data\geoip6           # База геолокации IPv6
+GeoIPFile ...                                # База геолокации IPv4
+GeoIPv6File ...                              # База геолокации IPv6
 NewCircuitPeriod 300                         # Интервал попыток построения новой цепи (сек)
 MaxCircuitDirtiness 600                      # Максимальное время жизни цепи (сек)
 CircuitStreamTimeout 300                     # Таймаут неактивного потока. Нужно для вебсокетов, SSH
@@ -322,20 +322,20 @@ HiddenServiceSingleHopMode 0                 # Запрет однохопног
 HiddenServiceNonAnonymousMode 0              # Запрет неанонимного режима
 
 #Мосты
-#ClientTransportPlugin obfs4,webtunnel exec C:\torchek\tor\pluggable_transports\lyrebird.exe # Путь к исполняемому файлу подключаемых транспортов
+#ClientTransportPlugin obfs4,webtunnel exec ...\lyrebird.exe # Путь к исполняемому файлу подключаемых транспортов
 ClientUseIPv6 0
 AddressDisableIPv6 1
 
 #obfs4
-#Bridge obfs4 109.202.219.164:47111 8EBD640CBC81B1AFB1E41921D376505C29E57A06 cert=nucr4/4B1W2UfTQK5bX/dqAKRcRD6UuEjvLNxlblk52owLbZNgSP0RTi869BdYPg5dzyLQ iat-mode=0
-#Bridge obfs4 96.43.207.76:8877 6E2620AEDD466CC1542CBC8B85F45FE04AC126EC cert=O9j5SLu3FYxUGj0hvbC72FE5q0eXUOCmdhjwLr7lZvKTTQakPCgPjAVgoMK7y48g1T3yHw iat-mode=0
+#Bridge obfs4 ...
+#Bridge obfs4 ...
 
 #WebTunnel
-#Bridge  webtunnel [2001:db8:8d16:cb5b:d7f5:504b:8768:bdd3]:443 570FEB15763CC623146E8433ACA751948A6756D4 url=https://pl.808.re/SDglNGoixITem7ZHxQKXSscK ver=0.0.2
-#Bridge  webtunnel [2001:db8:f3f8:1a33:dba0:17f6:35ce:24f3]:443 963668851C177DC162895A33F1473E32E1E4BE56 url=https://pod05.oneclickhost.eu/K5Fsvkz3SaWjVPm4i0vn5gIs ver=0.0.4
+#Bridge  webtunnel ...
+#Bridge  webtunnel ...
 
 #Скрытый сервис Tor
-HiddenServiceDir C:\torchek\tor\ebali        # Директория с ключами и hostname сервиса
+HiddenServiceDir ...                         # Директория с ключами и hostname сервиса
 HiddenServicePort 80 127.0.0.1:9090          # Внешний порт 80 → Nginx на 9090 (не обязательно Nginx)
 HiddenServiceAllowUnknownPorts 0             # Запрет на подключение к неописанным портам
 HiddenServiceVersion 3                       # Версия скрытого сервиса (v3)
