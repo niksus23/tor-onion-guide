@@ -207,14 +207,8 @@ HiddenServicePort 80 127.0.0.1:8080
 ```
 - Это правило говорит Tor: «Всё, что приходит на 80-й порт этого onion-адреса, перенаправляй на локальный порт 8080»
 
-- Результат: посетитель открывает .onion-адрес в Tor Browser, Tor передаёт его запрос на локальный File Browser. Пользователь видит веб-интерфейс для загрузки, скачивания и управления файлами, но при этом соединение идёт внутри анонимной сети Tor .
+- Результат: посетитель открывает .onion-адрес в Tor Browser, Tor передаёт его запрос на локальный File Browser. Пользователь видит веб-интерфейс для загрузки, скачивания и управления файлами, но при этом соединение идёт внутри анонимной сети Tor.
 
-Допустим, File Browser запущен в папке C:\Share и слушает порт 8080. В torrc указано:
-```text
-HiddenServiceDir C:\Users\<user>\AppData\Roaming\tor\hidden_service
-HiddenServicePort 80 127.0.0.1:8080
-```
-После запуска Tor появится адрес .onion. Перейдя по нему в Tor Browser, можно увидеть интерфейс File Browser и управлять файлами из папки C:\Share — но доступ к этому интерфейсу будет только через сеть Tor.
 <details>
 <summary>👁  Если прям коротко</summary>
 
@@ -255,11 +249,11 @@ File Browser работает локально на порту 8080. Tor соз�
 | `SocksPort` | 9050 | SOCKS5-прокси для приложений |
 | `ControlPort` | 9051 | Порт управления Tor |
 | `SafeSocks` | 1 | Блокирует соединения с самостоятельным DNS |
-| `#UseBridges` | — | Выключатель мостов (закомментирован) |
+| `UseBridges` | — | Выключатель мостов |
 | `BridgeRelay` | 0 | Не быть мостом-ретранслятором |
 | `StrictNodes` | 1 | Жёстко соблюдать запреты стран |
-| `#ExcludeNodes` | — | Запрет стран на любой позиции в цепи |
-| `#ExcludeExitNodes` | — | Запрет стран только для выходных узлов |
+| `ExcludeNodes` | — | Запрет стран на любой позиции в цепи |
+| `ExcludeExitNodes` | — | Запрет стран только для выходных узлов |
 | `CookieAuthentication` | 1 | Аутентификация на ControlPort через cookie |
 | `ORPort` | 0 | Не принимать соединения от узлов сети |
 | `ExitRelay` | 0 | Не быть выходным узлом |
@@ -271,15 +265,15 @@ File Browser работает локально на порту 8080. Tor соз�
 | `CircuitStreamTimeout` | 300 | Таймаут неактивного потока |
 | `CircuitBuildTimeout` | 300 | Таймаут построения цепи |
 | `KeepalivePeriod` | 300 | Период пустых ячеек, чтобы не рвался NAT |
-| `#LearnCircuitBuildTimeout` | — | Автонастройка таймаута построения цепи |
+| `LearnCircuitBuildTimeout` | — | Автонастройка таймаута построения цепи |
 | `LongLivedPorts` | список | Порты для более стабильных цепей |
 | `HiddenServiceSingleHopMode` | 0 | Запрет однохопного режима |
 | `HiddenServiceNonAnonymousMode` | 0 | Запрет неанонимного режима |
-| `#ClientTransportPlugin` | — | Путь к плагину моста |
+| `ClientTransportPlugin` | — | Путь к плагину моста |
 | `ClientUseIPv6` | 0 | Только IPv4 |
 | `AddressDisableIPv6` | 1 | Отключить публикацию IPv6-адреса |
-| `#Bridge obfs4` | — | Мост obfs4 |
-| `#Bridge webtunnel` | — | Мост webtunnel |
+| `Bridge obfs4` | — | Мост obfs4 |
+| `Bridge webtunnel` | — | Мост webtunnel |
 | `HiddenServiceDir` | путь | Папка с ключами и hostname сервиса |
 | `HiddenServicePort` | 80 127.0.0.1:9090 | Перенаправление портов |
 | `HiddenServiceAllowUnknownPorts` | 0 | Запрет неописанных портов |
